@@ -9,8 +9,7 @@ interface ImportMetaEnv {
     readonly VITE_BASE_URL: string
 }
 
-declare global {
-    interface ImportMeta {
-        env: ImportMetaEnv
-    }
+interface ImportMeta {
+    env: ImportMetaEnv
 }
+

@@ -12,6 +12,9 @@ module.exports = {
         "plugin:vue/vue3-recommended",
         "plugin:@typescript-eslint/recommended",
     ],
-    rules: {},
+    rules: {
+			'vue/multi-word-component-names': 'off',
+			"@typescript-eslint/no-explicit-any": "off"
+		},
     plugins: ['@typescript-eslint', 'prettier']
 };

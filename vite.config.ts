@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from "path";
-import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
@@ -23,13 +22,12 @@ export default defineConfig({
     },
     envDir: './',
     plugins: [vue(),
-        AutoImport({
-            resolvers: [ElementPlusResolver()],
-        }),
         Components({
-            resolvers: [ElementPlusResolver()],
+						dts: 'src/typings/components.d.ts',
+						resolvers: [ElementPlusResolver()],
         }),],
     server: {
+        open: true,
         port: 1212
     }
 })
