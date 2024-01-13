@@ -11,7 +11,7 @@ module.exports = {
     jsxBracketSameLine: true, //多属性html标签的‘>’折行放置
     arrowParens: "always", //单参数箭头函数参数周围使用圆括号-eg: (x) => x
     requirePragma: false, //无需顶部注释即可格式化
-    insertPragma: false, //在已被preitter格式化的文件顶部加上标注
+    insertPragma: false, //在已被prettier格式化的文件顶部加上标注
     proseWrap: "preserve", //默认值。因为使用了一些折行敏感型的渲染器（如GitHub comment）而按照markdown文本样式进行折行
     htmlWhitespaceSensitivity: "strict", //对HTML全局空白不敏感
     vueIndentScriptAndStyle: false, //不对vue中的script及style标签缩进
