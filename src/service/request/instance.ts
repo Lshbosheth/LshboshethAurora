@@ -10,12 +10,13 @@ import {
 	transformRequestData
 } from '@/utils';
 import { handleRefreshToken } from './helpers';
+import { useNProgress } from '@/hooks'
 
+const { start, done } = useNProgress()
 type RefreshRequestQueue = (config: AxiosRequestConfig) => void;
 
 /**
  * 封装axios请求类
- * @author Soybean<honghuangdc@gmail.com>
  */
 export default class CustomAxiosInstance {
 	instance: AxiosInstance;
@@ -59,6 +60,7 @@ export default class CustomAxiosInstance {
 					// 设置token
 					handleConfig.headers.Authorization = localStg.get('token') || '';
 				}
+				start()
 				return handleConfig;
 			},
 			(axiosError: AxiosError) => {
@@ -103,6 +105,7 @@ export default class CustomAxiosInstance {
 					return handleServiceResult(error, null);
 				}
 				const error = handleResponseError(response);
+				done()
 				return handleServiceResult(error, null);
 			}) as (response: AxiosResponse<any, any>) => Promise<AxiosResponse<any, any>>,
 			(axiosError: AxiosError) => {
