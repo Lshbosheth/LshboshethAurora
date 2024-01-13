@@ -47,7 +47,7 @@ declare namespace Service {
   }
 
   /** 自定义的请求结果 */
-  type RequestResult = SuccessResult<T> | FailedResult;
+	type RequestResult<T = any> = SuccessResult<T> | FailedResult;
 
 }
 
