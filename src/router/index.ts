@@ -1,5 +1,5 @@
-import type {App} from 'vue';
-import {createRouter, createWebHistory} from "vue-router";
+import type { App } from 'vue';
+import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
     {

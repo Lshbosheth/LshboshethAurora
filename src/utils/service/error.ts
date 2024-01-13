@@ -1,12 +1,12 @@
 import type { AxiosError, AxiosResponse } from 'axios';
 import {
-  DEFAULT_REQUEST_ERROR_CODE,
-  DEFAULT_REQUEST_ERROR_MSG,
-  ERROR_STATUS,
-  NETWORK_ERROR_CODE,
-  NETWORK_ERROR_MSG,
-  REQUEST_TIMEOUT_CODE,
-  REQUEST_TIMEOUT_MSG
+	DEFAULT_REQUEST_ERROR_CODE,
+	DEFAULT_REQUEST_ERROR_MSG,
+	ERROR_STATUS,
+	NETWORK_ERROR_CODE,
+	NETWORK_ERROR_MSG,
+	REQUEST_TIMEOUT_CODE,
+	REQUEST_TIMEOUT_MSG
 } from '@/config';
 import { exeStrategyActions } from '../common';
 import { showErrorMsg } from './msg';

@@ -1,4 +1,5 @@
-import { decrypt, encrypt } from '../crypto';
+import { decrypt, encrypt } from '@/utils';
+
 interface StorageData<T> {
     value: T;
     expire: number | null;

@@ -1,5 +1,5 @@
 import { nextTick } from 'vue'
-import NProgress, {NProgressOptions} from 'nprogress'
+import NProgress, { NProgressOptions } from 'nprogress'
 import 'nprogress/nprogress.css'
 
 export const useNProgress = () => {
@@ -10,8 +10,7 @@ export const useNProgress = () => {
 		const bar = document.getElementById('nprogress')?.getElementsByClassName('bar')[0] as HTMLElement
 		if (bar) {
 			const gradientColors = Array.from({ length: 7 }, () => getRandomColor());
-			const gradientString = `linear-gradient(to bottom, ${gradientColors.join(', ')})`;
-			bar.style.background = gradientString;
+			bar.style.background = `linear-gradient(to bottom, ${gradientColors.join(', ')})`;
     }
   }
 

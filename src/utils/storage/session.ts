@@ -1,4 +1,5 @@
 import { decrypt, encrypt } from '@/utils';
+
 function createSessionStorage<T extends StorageInterface.Session = StorageInterface.Session>() {
     function set<K extends keyof T>(key: K, value: T[K]) {
         const json = value;

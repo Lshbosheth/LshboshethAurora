@@ -1,5 +1,7 @@
 <template>
-  <div @click="hhhhh">111</div>
+  <div @click="hhhhh">
+    111
+  </div>
 </template>
 <script lang="ts" setup>
 import { ElMessage } from "element-plus";
