@@ -23,10 +23,5 @@ declare namespace TypeUtil {
   type DataTypeStringKey = keyof DataType;
 
   type DataTypeString<T extends DataTypeStringKey = DataTypeStringKey> = `[object ${Capitalize<T>}]`;
-  // union to tuple
-  type Union2IntersectionFn<T> = (T extends unknown ? (k: () => T) => void : never) extends (k: infer R) => void
-    ? R
-    : never;
-  type GetUnionLast<U> = Union2IntersectionFn<U> extends () => infer I ? I : never;
 
 }

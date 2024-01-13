@@ -9,5 +9,6 @@ declare namespace StorageInterface {
         /** 用户刷新token */
         refreshToken: string;
         /** 用户信息 */
-        userInfo: Auth.UserInfo;}
+        userInfo: Auth.UserInfo;
+		}
 }
