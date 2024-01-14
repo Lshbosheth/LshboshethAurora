@@ -8,7 +8,6 @@ export async function handleServiceResult<T = any>(error: Service.RequestError |
     return fail;
   }
   const success: Service.SuccessResult<T> = {
-    error: null,
     data
   };
   return success;

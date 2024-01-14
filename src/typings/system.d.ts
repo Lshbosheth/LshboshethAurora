@@ -32,9 +32,7 @@ declare namespace Service {
 
   /** 自定义的请求成功结果 */
   interface SuccessResult< T = any> {
-    /** 请求错误 */
-    error: null;
-    /** 请求数据 */
+    /** 返回数据 */
     data: T;
   }
 

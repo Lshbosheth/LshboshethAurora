@@ -38,7 +38,7 @@ export default class CustomAxiosInstance {
 			codeKey: 'code',
 			dataKey: 'data',
 			msgKey: 'message',
-			successCode: 200
+			successCode: 0
 		}
 	) {
 		this.backendConfig = backendConfig;
@@ -70,6 +70,7 @@ export default class CustomAxiosInstance {
 		);
 		this.instance.interceptors.response.use(
 			(async response => {
+				done()
 				const { status, config } = response;
 				if (status === 200 || status < 300 || status === 304) {
 					const backend = response.data;
@@ -105,7 +106,6 @@ export default class CustomAxiosInstance {
 					return handleServiceResult(error, null);
 				}
 				const error = handleResponseError(response);
-				done()
 				return handleServiceResult(error, null);
 			}) as (response: AxiosResponse<any, any>) => Promise<AxiosResponse<any, any>>,
 			(axiosError: AxiosError) => {
