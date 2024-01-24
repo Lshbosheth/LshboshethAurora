@@ -1,5 +1,4 @@
 import { stringify } from 'qs';
-import FormData from 'form-data';
 import { isArray, isFile } from '../common';
 
 /**
