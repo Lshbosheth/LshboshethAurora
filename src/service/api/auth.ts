@@ -5,5 +5,9 @@ import { request } from '../request';
  * @param refreshToken
  */
 export function fetchUpdateToken(refreshToken: string) {
-	return request.post<ApiAuth.Token>('/auth/refresh', { refreshToken });
+	return request.post<ApiAuth.Token>('/api/auth/refresh', { refreshToken });
+}
+
+export function login(data: any) {
+	return request.post('/api/auth/login', data );
 }
