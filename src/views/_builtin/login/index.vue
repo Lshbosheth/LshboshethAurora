@@ -15,6 +15,7 @@
 		</el-form-item>
 		<el-form-item>
 			<el-button type="primary" @click="handleSubmit">登录</el-button>
+			<el-button @click="singUp">注册</el-button>
 		</el-form-item>
 	</el-form>
 </template>
@@ -36,6 +37,10 @@ const handleSubmit = () => {
 	login(toRaw(model)).then(res => {
 		console.log(res)
 	})
+}
+
+const singUp = () => {
+	console.log('注册')
 }
 const getCaptchaUrl = ()=> {
 	CaptchaUrl.value = `${import.meta.env.VITE_BASE_URL}/api/utils/captcha?key=${Math.random()}`

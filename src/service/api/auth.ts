@@ -11,3 +11,7 @@ export function fetchUpdateToken(refreshToken: string) {
 export function login(data: any) {
 	return request.post('/api/auth/login', data );
 }
+
+export function singUp(data: any) {
+	return request.post('/api/auth/signUp', data );
+}
