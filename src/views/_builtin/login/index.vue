@@ -14,10 +14,16 @@
 			</el-input>
 		</el-form-item>
 		<el-form-item>
-			<el-button type="primary" @click="handleSubmit">登录</el-button>
-			<el-button @click="singUp">注册</el-button>
+			<el-button style="width: 100%" type="primary" round @click="handleSubmit">登录</el-button>
+		</el-form-item>
+		<el-form-item>
+			<el-button type="text" round @click="codeLogin">验证码登录</el-button>
+			<el-button type="text" round @click="register">注册</el-button>
 		</el-form-item>
 	</el-form>
+	<div class="relative">
+		<div class="absolute left-130px w-100px color-red">123</div>
+	</div>
 </template>
 <script lang="ts" setup>
 import { reactive, onMounted, ref, toRaw } from "vue";
@@ -39,8 +45,12 @@ const handleSubmit = () => {
 	})
 }
 
-const singUp = () => {
+const register = () => {
 	console.log('注册')
+}
+
+const codeLogin = () => {
+	console.log('codeLogin')
 }
 const getCaptchaUrl = ()=> {
 	CaptchaUrl.value = `${import.meta.env.VITE_BASE_URL}/api/utils/captcha?key=${Math.random()}`

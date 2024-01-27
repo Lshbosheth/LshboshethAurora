@@ -1,8 +1,9 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import { resolve } from "path";
+import { resolve } from 'path'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import UnoCSS from 'unocss/vite'
 
 const root = process.cwd()
 
@@ -11,23 +12,26 @@ function pathResolve(dir: string) {
 }
 
 export default defineConfig({
-    resolve: {
-        //设置别名
-        alias: [
-            {
-                find: /\@\//,
-                replacement: `${pathResolve('src')}/`
-            }
-        ]
-    },
-    envDir: './',
-    plugins: [vue(),
-        Components({
-						dts: 'src/typings/components.d.ts',
-						resolvers: [ElementPlusResolver()],
-        }),],
-    server: {
-        open: true,
-        port: 1212
-    }
+  resolve: {
+    //设置别名
+    alias: [
+      {
+        find: /\@\//,
+        replacement: `${pathResolve('src')}/`,
+      },
+    ],
+  },
+  envDir: './',
+  plugins: [
+    vue(),
+		UnoCSS(),
+    Components({
+      dts: 'src/typings/components.d.ts',
+      resolvers: [ElementPlusResolver()],
+    }),
+  ],
+  server: {
+    open: true,
+    port: 1212,
+  },
 })
