@@ -13,6 +13,11 @@ module.exports = {
         "plugin:@typescript-eslint/recommended",
     ],
     rules: {
+			'vue/singleline-html-element-content-newline': 'off',
+			'vue/attributes-order': 'off',
+			'vue/max-attributes-per-line': 'off',
+			'vue/max-attributes-per-lin': 'off',
+			'vue/html-indent': 'off',
 			'vue/multi-word-component-names': 'off',
 			"@typescript-eslint/no-explicit-any": "off"
 		},

@@ -1,17 +1,16 @@
 <template>
 	<el-form :model="model" label-width="120px">
 		<el-form-item label="用户名">
-			<el-input v-model="model.username"/>
+			<el-input v-model="model.username" />
 		</el-form-item>
 		<el-form-item label="密码">
-			<el-input v-model="model.password"/>
+			<el-input v-model="model.password" />
 		</el-form-item>
 		<el-form-item label="验证码">
 			<el-input v-model="model.captcha">
-				<template #suffix>
-					<img :src="CaptchaUrl"
-alt @click="getCaptchaUrl" class="captcha_img" />
-				</template>
+        <template #suffix>
+					<img :src="CaptchaUrl" @click="getCaptchaUrl" class="captcha_img" alt="">
+        </template>
 			</el-input>
 		</el-form-item>
 		<el-form-item>
@@ -34,8 +33,6 @@ const model: FormModel = reactive({
 	captcha: ''
 });
 const handleSubmit = () => {
-	console.log(model);
-	console.log(toRaw(model));
 	login(toRaw(model)).then(res => {
 		console.log(res)
 	})
